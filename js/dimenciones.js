@@ -23,8 +23,7 @@ var dimenciones =
             dimenciones.ancho = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
             dimenciones.alto = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
-            console.log("ANCHO: " + dimenciones.ancho + " --- ALTO: " + dimenciones.alto);
-            inicio.recargarTitles();
+            // console.log("ANCHO: " + dimenciones.ancho + " --- ALTO: " + dimenciones.alto);
 
         });
 

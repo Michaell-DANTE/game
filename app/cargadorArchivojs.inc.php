@@ -4,12 +4,22 @@
 
     $fuentesJavascript = array
     (
-
-        "js/ajax.js",
-        "js/teclado.js",
-        "js/rectangulo.js",
-        "js/buclePrincipal.js",
         "js/dimenciones.js",
+        "js/jugadorMapaMundi.js",
+        "js/Rectangulo.js",
+        "js/Sprites.js",
+        "js/Tile.js",
+        "js/CapaMapaTiles.js",
+        "js/PaletaSprites.js",
+        "js/listadoEstados.js",
+        "js/ajax.js",
+        "js/EstadoMapaMundi.js",
+        "js/maquinaEstados.js",
+        "js/Punto.js",
+        "js/Mapa.js",
+        "js/controlesTeclado.js",
+        "js/teclado.js",
+        "js/buclePrincipal.js",
         "js/inicio.js"
 
     );

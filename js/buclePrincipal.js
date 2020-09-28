@@ -72,7 +72,8 @@ var buclePrincipal =
     actualizar: function(registroTemporal)
     {
 
-        teclado.reiniciar();
+
+        maquinaEstados.actualizar(registroTemporal);
         buclePrincipal.aps++;
 
     },
@@ -84,7 +85,7 @@ var buclePrincipal =
     */
     dibujar: function(registroTemporal)
     {
-
+        maquinaEstados.dibujar();
         buclePrincipal.fps++;
 
     }

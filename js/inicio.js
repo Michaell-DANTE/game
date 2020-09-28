@@ -1,50 +1,50 @@
 //---------------------------------------Inicio-------------------------------------------
 
 //carga los eventos de sistema.
-document.addEventListener('DOMContentLoaded', function()
-{
-
-inicio.iniciarJuego();  
-
-}, false);
 
 var inicio =
 {
-    /**
-     * iniciarJuego
-     * Ejecuta todos los procesos del sistema.
-    */ 
+  
+    iniciadores: 
+    [
+
+        dimenciones.iniciar(),
+        maquinaEstados.iniciar(),
+        teclado.iniciar(),
+        buclePrincipal.iterar()
+
+    ],
+
     iniciarJuego: function()
     {
-
-        ajax.cargarArchivo("img/mapas/mundo1.json")
-        teclado.iniciar();
-        dimenciones.iniciar();
-        inicio.recargarTitles();
-        buclePrincipal.iterar();
+        //shift = vaciar array, cadaves que pase por el array ira borrando su contenido 1 a 1.
+        inicio.encadenarInicios(inicio.iniciadores.shift());
 
     },
 
-    recargarTitles: function()
+    encadenarInicios: function(iniciador)
     {
 
-        document.getElementById("juego").innerHTML  = "";
+        if( iniciador )
+        {
 
-        for( var y = 0; y < dimenciones.obtenerTilesVerticales(); y++)
-        { 
-
-            for( var x = 0; x < dimenciones.obtenerTilesHorizontales(); x++)
-            { 
-
-                var r = new Rectangulo(x * dimenciones.ladoTiles, y * dimenciones.ladoTiles,
-                dimenciones.ladoTiles, dimenciones.ladoTiles);
-
-            }
+            //Pasar una funcion como callback
+            //() = Funcion anonima
+            // -> = Return sobre la marcha
+            iniciador(() => inicio.encadenarInicios(iniciadores.shift()));
 
         }
 
     }
 
 };
+
+document.addEventListener('DOMContentLoaded', function()
+{
+
+    inicio.iniciarJuego();  
+
+}, false);
+
 
 // NOTA:  DOM = DOCUMENT OBJECT MODEL.

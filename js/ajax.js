@@ -1,7 +1,7 @@
 var ajax =
 {
 
-    cargarArchivo: function(ruta)
+    cargarArchivo: function(ruta, manipularDatos)
     {
 
         var peticion = new XMLHttpRequest();
@@ -22,7 +22,7 @@ var ajax =
                 if (  peticion.status == 200 )
                 {
 
-                    console.log(JSON.parse(peticion.responseText));
+                    manipularDatos(JSON.parse(peticion.responseText));
 
                 }else if ( peticion.status == 400 )
                 {

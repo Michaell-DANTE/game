@@ -7,8 +7,25 @@
 </head>
 <body>
     <div id="juego">
-    
+
+        <div id="mapa">
+        
+        </div>
+
+        <div id="jugador">
+        
+        </div>
+
+        <a id="arriba" href="#">arriba1</a>
+        <a id="abajo" href="#">abajo1</a>
+        <a id="izquierda" href="#">izquierda1</a>
+        <a id="derecha" href="#">derecha1</a>
+
+        
+
     </div>
+
+
 
     <?php
 
